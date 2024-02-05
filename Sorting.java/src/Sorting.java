@@ -48,6 +48,10 @@ public class Sorting {
         System.out.println("Números después de ordenar: \n");
         imprimirArray(numerosGnome);
 
+        System.out.println("-----------------------------------------");
+
+        
+
     }
 
     //Método para hacer MergeSort
