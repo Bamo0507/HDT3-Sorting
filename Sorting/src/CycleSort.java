@@ -50,13 +50,4 @@ public class CycleSort {
         }
     }
 
-    public static void main(String[] args) {
-        // Ejemplo de uso
-        Integer[] arr = {4, 2, 1, 3, 5};
-        System.out.println("Arreglo original: " + Arrays.toString(arr));
-
-        // Ordenar utilizando Cycle Sort
-        sort(arr);
-        System.out.println("Arreglo ordenado: " + Arrays.toString(arr));
-    }
 }

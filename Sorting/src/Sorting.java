@@ -6,10 +6,13 @@
 
 //Librerías a utilizar
 import java.util.Random;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Sorting {
     
@@ -19,10 +22,10 @@ public class Sorting {
      */
     public static void main(String[] args) throws Exception {
         GnomeSort gnomeSort = new GnomeSort();
-        MergeSort mergeSort = new MergeSort();
-        //Mensaje de bienvenida y se generan los números al azar
+        Integer[] numeros = leerCSV();
         for(int i=10; i < 3000; i++){
-            gnomeSort.sort(generarOrdenados(i));
+            Integer[] numerosActuales = Arrays.copyOf(numeros, i);
+            gnomeSort.sort(numerosActuales);
         }
     }
     
@@ -35,6 +38,23 @@ public class Sorting {
         return numerosAleatorios;
     }
 
+    public static Integer[] leerCSV() throws IOException {
+        Integer[] numeros = new Integer[3000];
+        
+        String archivoCSV = "ListaNumeros.csv"; // Nombre del archivo
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(archivoCSV))) {
+            String linea = br.readLine(); // Lee la primera línea del archivo
+            if (linea != null) {
+                String[] valores = linea.split(","); // Divide la línea en valores individuales
+                for (int i = 0; i < Math.min(valores.length, 3000); i++) {
+                    numeros[i] = Integer.parseInt(valores[i].trim());
+                }
+            }
+        }
+        
+        return numeros;
+    }    
 
     public static Integer[] generarOrdenados(int cantidad) {
         Integer[] numerosOrdenados = new Integer[cantidad];

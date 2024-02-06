@@ -42,14 +42,4 @@ public class QuickSort {
         return i + 1;
     }
 
-    public static void main(String[] args) {
-        // Ejemplo de uso
-        Integer[] array = {4, 2, 8, 1, 5, 6, 3, 7};
-        sort(array);
-
-        System.out.print("Array ordenado: ");
-        for (int num : array) {
-            System.out.print(num + " ");
-        }
-    }
 }

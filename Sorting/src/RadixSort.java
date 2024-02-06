@@ -56,13 +56,4 @@ public class RadixSort {
         System.arraycopy(output, 0, arr, 0, n);
     }
 
-    public static void main(String[] args) {
-        // Ejemplo de uso con números enteros
-        Integer[] array = {170, 45, 75, 90, 802, 24, 2, 66};
-        System.out.println("Arreglo original: " + Arrays.toString(array));
-
-        radixSort(array);
-
-        System.out.println("Arreglo ordenado: " + Arrays.toString(array));
-    }
 }
