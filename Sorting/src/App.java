@@ -1,7 +1,10 @@
-//Bryan Alberto Martínez Orellana 23542
-//Adriana Sophia Palacios Contreras 23044
+//Nombre: Bryan Alberto Martínez Orellana
+//Carné: 23542
+//Nombre: Adriana Sophia Palacios Contreras
+//Carné: 23044
 //Fecha de Creación: 04/02/2024
-//Fecha de Última Modificacion:
+//Fecha de Última Modificacion: 07/02/2024
+
 //Hoja de Trabajo 3 - Sorts
 
 //Librerías a utilizar
@@ -18,16 +21,20 @@ import java.util.Scanner;
 public class App {
 
     /**
-     * @param args
-     * @throws Exception
+     * Método principal que ejecuta el programa.
+     * @param args Argumentos pasados al programa.
+     * @throws Exception Excepción lanzada en caso de errores durante la ejecución.
      */
     public static void main(String[] args) throws Exception {
+        // Se crea una instancia de GnomeSort
         GnomeSort gnomeSort = new GnomeSort();
+        // Se lee la lista de números desde un archivo CSV
         Integer[] numeros = leerCSV();
         System.out.println("Press key");
         Scanner scan = new Scanner(System.in);
         String tecla = scan.nextLine();
         System.out.println("Bienvenido Querido Usuario!!!");
+        // Se itera sobre diferentes tamaños de lista de números
         for(int i=10; i < 3000; i++){
             Integer[] numerosActuales = Arrays.copyOf(numeros, i);
             gnomeSort.sort(generarOrdenados(i)); 
@@ -36,6 +43,11 @@ public class App {
         System.out.println("Done...");
     }
 
+    /**
+     * Genera un array de números aleatorios.
+     * @param cantidad Cantidad de números aleatorios a generar.
+     * @return Array de números aleatorios generados.
+     */
     public static Integer[] generarRandoms(int cantidad) {
         Random random = new Random();
         Integer[] numerosAleatorios = new Integer[cantidad];
@@ -45,6 +57,11 @@ public class App {
         return numerosAleatorios;
     }
 
+    /**
+     * Lee una lista de números desde un archivo CSV.
+     * @return Array de números leídos desde el archivo CSV.
+     * @throws IOException Excepción lanzada en caso de errores de lectura del archivo.
+     */
     public static Integer[] leerCSV() throws IOException {
         Integer[] numeros = new Integer[3000];
 
@@ -63,6 +80,11 @@ public class App {
         return numeros;
     }
 
+    /**
+     * Genera un array de números ordenados de forma ascendente.
+     * @param cantidad Cantidad de números a generar.
+     * @return Array de números ordenados.
+     */
     public static Integer[] generarOrdenados(int cantidad) {
         Integer[] numerosOrdenados = new Integer[cantidad];
         for (int i = 0; i < cantidad; i++) {
@@ -72,10 +94,10 @@ public class App {
     }
 
     /**
-     * @param nombreArchivo
-     * @param listadoNumeros
+     * Guarda los números de un array en un archivo CSV.
+     * @param nombreArchivo Nombre del archivo CSV donde se guardarán los números.
+     * @param listadoNumeros Array de números a guardar en el archivo CSV.
      */
-    //Método para guardar los números de un Array en un archivo CSV
     public static void guardarEnArchivo(String nombreArchivo, int[] listadoNumeros){
         String nombre = nombreArchivo;
         try{
@@ -90,7 +112,7 @@ public class App {
             for(int i=0; i<listadoNumeros.length; i++){
                 w.write(Integer.toString(listadoNumeros[i]));
                 //Si no estamos al final de la lista, agregar coma
-                //Esto para manetener el formato de CSV
+                //Esto para mantener el formato de CSV
                 if(i < listadoNumeros.length - 1){
                     w.write(",");
                 }
@@ -101,6 +123,10 @@ public class App {
         }
     }
 
+    /**
+     * Imprime un array de números en la consola.
+     * @param arr Array de números a imprimir.
+     */
     public static void imprimirArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");

@@ -1,7 +1,19 @@
+//Nombre: Bryan Alberto Martínez Orellana
+//Carné: 23542
+//Nombre: Adriana Sophia Palacios Contreras
+//Carné: 23044
+//Fecha de Creación: 04/02/2024
+//Fecha de Última Modificacion: 07/02/2024
+
+//Hoja de Trabajo 3 - Sorts
+
 import static org.junit.Assert.assertArrayEquals;
 import java.util.Arrays;
 import org.junit.Test;
 
+/**
+ * Clase de pruebas unitarias para los algoritmos de ordenación.
+ */
 public class SortingTest {
 
     @Test

@@ -1,8 +1,25 @@
+//Nombre: Bryan Alberto Martínez Orellana
+//Carné: 23542
+//Nombre: Adriana Sophia Palacios Contreras
+//Carné: 23044
+//Fecha de Creación: 04/02/2024
+//Fecha de Última Modificacion: 07/02/2024
+
+//Hoja de Trabajo 3 - Sorts
+
 import java.util.Arrays;
 
+/**
+ * Clase que implementa el algoritmo de Radix Sort para ordenar un array de elementos comparables.
+ */
 public class RadixSort {
 
-    // Método para encontrar el máximo valor en un arreglo
+    /**
+     * Método para encontrar el valor máximo en un arreglo.
+     * @param arr Array en el que se buscará el valor máximo.
+     * @param <T> Tipo de elementos en el array, debe ser comparable.
+     * @return El valor máximo encontrado en el array.
+     */
     private static <T extends Comparable<T>> T findMax(T[] arr) {
         T max = arr[0];
         for (T value : arr) {
@@ -13,9 +30,13 @@ public class RadixSort {
         return max;
     }
 
-    // Método principal de Radix Sort
+    /**
+     * Método principal de Radix Sort.
+     * @param arr Array a ordenar.
+     * @param <T> Tipo de elementos en el array, debe ser comparable.
+     */
     public static <T extends Comparable<T>> void radixSort(T[] arr) {
-        // Encontrar el máximo valor para determinar la cantidad de dígitos
+        // Encontrar el valor máximo para determinar la cantidad de dígitos
         T max = findMax(arr);
         int exp = 1;
 
@@ -26,7 +47,12 @@ public class RadixSort {
         }
     }
 
-    // Método auxiliar Counting Sort para un dígito específico
+    /**
+     * Método auxiliar Counting Sort para un dígito específico.
+     * @param arr Array a ordenar.
+     * @param exp Valor del dígito a considerar.
+     * @param <T> Tipo de elementos en el array, debe ser comparable.
+     */
     private static <T extends Comparable<T>> void countingSort(T[] arr, int exp) {
         int n = arr.length;
         T[] output = Arrays.copyOf(arr, n);
@@ -55,5 +81,4 @@ public class RadixSort {
         // Copiar el arreglo de salida al arreglo original
         System.arraycopy(output, 0, arr, 0, n);
     }
-
 }
