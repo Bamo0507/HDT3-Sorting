@@ -18,10 +18,9 @@ Este repositorio contiene implementaciones en Java de varios algoritmos de orden
   - [Quick Sort](#quick-sort)
   - [Gnome Sort](#gnome-sort)
   - [Merge Sort](#merge-sort)
-- [Uso](#uso)
 - [Pruebas](#pruebas)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
+- [Profiler Utilizado](#Profiler-Utilizado)
+
 
 ## Introducción
 
