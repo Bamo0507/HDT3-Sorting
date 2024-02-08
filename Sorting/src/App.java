@@ -1,7 +1,7 @@
 //Bryan Alberto Martínez Orellana 23542
 //Adriana Sophia Palacios Contreras 23044
 //Fecha de Creación: 04/02/2024
-//Fecha de Última Modificacion: 
+//Fecha de Última Modificacion:
 //Hoja de Trabajo 3 - Sorts
 
 //Librerías a utilizar
@@ -13,22 +13,29 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Scanner;
 
-public class Sorting {
-    
-    /** 
+public class App {
+
+    /**
      * @param args
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
         GnomeSort gnomeSort = new GnomeSort();
         Integer[] numeros = leerCSV();
+        System.out.println("Press key");
+        Scanner scan = new Scanner(System.in);
+        String tecla = scan.nextLine();
+        System.out.println("Bienvenido Querido Usuario!!!");
         for(int i=10; i < 3000; i++){
             Integer[] numerosActuales = Arrays.copyOf(numeros, i);
-            gnomeSort.sort(numerosActuales);
+            gnomeSort.sort(generarOrdenados(i)); 
+            System.out.println("Iteration " + i );
         }
+        System.out.println("Done...");
     }
-    
+
     public static Integer[] generarRandoms(int cantidad) {
         Random random = new Random();
         Integer[] numerosAleatorios = new Integer[cantidad];
@@ -40,9 +47,9 @@ public class Sorting {
 
     public static Integer[] leerCSV() throws IOException {
         Integer[] numeros = new Integer[3000];
-        
+
         String archivoCSV = "ListaNumeros.csv"; // Nombre del archivo
-        
+
         try (BufferedReader br = new BufferedReader(new FileReader(archivoCSV))) {
             String linea = br.readLine(); // Lee la primera línea del archivo
             if (linea != null) {
@@ -52,9 +59,9 @@ public class Sorting {
                 }
             }
         }
-        
+
         return numeros;
-    }    
+    }
 
     public static Integer[] generarOrdenados(int cantidad) {
         Integer[] numerosOrdenados = new Integer[cantidad];
@@ -64,7 +71,7 @@ public class Sorting {
         return numerosOrdenados;
     }
 
-    /** 
+    /**
      * @param nombreArchivo
      * @param listadoNumeros
      */
